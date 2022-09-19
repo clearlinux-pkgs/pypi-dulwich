@@ -1,5 +1,5 @@
 PKG_NAME := pypi-dulwich
-URL = https://files.pythonhosted.org/packages/8e/99/7f139ec0e9d224542115ef070c79503bcb271edaaf0c1e049a5fbdaad6a5/dulwich-0.20.45.tar.gz
+URL = https://files.pythonhosted.org/packages/4c/61/85f17dd9e744e027d23bee2bbafc8438fab26c175a089b1a06b664deae21/dulwich-0.20.46.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
