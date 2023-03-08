@@ -1,3 +1,94 @@
+0.21.3	2023-02-17
+
+ * Add support for ``worktreeconfig`` extension.
+   (Jelmer Vernooĳ)
+
+ * Deprecate ``Commit.extra``; the Git project specifically
+   discourages adding custom lines, and the contents of
+   ``Commit.extra`` are unpredictable as contents
+   may be different between different versions of Dulwich
+   with support for different headers.
+
+   ``Commit._extra`` still exists.
+   (Jelmer Vernooĳ)
+
+0.21.2	2023-01-18
+
+ * Fix early file close bug in ``dulwich.pack.extend_pack``.
+   (Jelmer Vernooĳ)
+
+0.21.1	2023-01-17
+
+ * Factor out ``dulwich.pack.extend_pack``.
+   (Jelmer Vernooĳ)
+
+0.21.0	2023-01-16
+
+ * Pack internals have been significantly refactored, including
+   significant low-level API changes.
+
+   As a consequence of this, Dulwich now reuses pack deltas
+   when communicating with remote servers, which brings a
+   big boost to network performance.
+   (Jelmer Vernooĳ)
+
+ * Add 'pack-refs' command.
+   (Dan Villiom Podlaski Christiansen)
+
+ * Handle more errors when trying to read a ref
+   (Dan Villiom Podlaski Christiansen)
+
+ * Allow for reuse of existing deltas while creating pack files
+   (Stefan Sperling)
+
+ * cli: fix argument parsing for pack-objects --stdout
+   (Stefan Sperling)
+
+ * cli: open pack-objects output files in binary mode to avoid write() error
+   (Stefan Sperling)
+
+ * Bump minimum python version to 3.7. (Jelmer Vernooĳ)
+
+ * honor no_proxy environment variable (#1098, afaul)
+
+ * In HTTP Git Client, allow missing Content-Type.
+   (Jelmer Vernooĳ)
+
+ * Fix --pure builds (Jelmer Vernooĳ, #1093)
+
+ * Allow passing abbrev to describe (#1084, Seppo Yli-Olli)
+
+0.20.50	2022-10-30
+
+ * Add --deltify option to ``dulwich pack-objects`` which enables
+   deltification, and add initial support for reusing suitable
+   deltas found in an existing pack file.
+   (Stefan Sperling)
+
+ * Fix Repo.reset_index.
+   Previously, it instead took the union with the given tree.
+   (Christian Sattler, #1072)
+
+ * Add -b argument to ``dulwich clone``.
+   (Jelmer Vernooĳ)
+
+ * On Windows, provide a hint about developer mode
+   when creating symlinks fails due to a permission
+   error. (Jelmer Vernooĳ, #1005)
+
+ * Add new ``ObjectID`` type in ``dulwich.objects``,
+   currently just an alias for ``bytes``.
+   (Jelmer Vernooĳ)
+
+ * Support repository format version 1.
+   (Jelmer Vernooĳ, #1056)
+
+ * Support \r\n line endings with continuations when parsing
+   configuration files.  (Jelmer Vernooĳ)
+
+ * Fix handling of SymrefLoop in RefsContainer.__setitem__.
+   (Dominic Davis-Foster, Jelmer Vernooĳ)
+
 0.20.46	2022-09-06
 
  * Apply insteadOf to rsync-style location strings
