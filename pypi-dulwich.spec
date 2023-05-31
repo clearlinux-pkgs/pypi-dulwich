@@ -7,7 +7,7 @@
 #
 Name     : pypi-dulwich
 Version  : 0.21.3
-Release  : 8
+Release  : 9
 URL      : https://files.pythonhosted.org/packages/53/a8/c96686cd8e2b0875dbd7d3248c158ff07f2c0ce41857700711a92e97b463/dulwich-0.21.3.tar.gz
 Source0  : https://files.pythonhosted.org/packages/53/a8/c96686cd8e2b0875dbd7d3248c158ff07f2c0ce41857700711a92e97b463/dulwich-0.21.3.tar.gz
 Source1  : https://files.pythonhosted.org/packages/53/a8/c96686cd8e2b0875dbd7d3248c158ff07f2c0ce41857700711a92e97b463/dulwich-0.21.3.tar.gz.asc
@@ -19,6 +19,7 @@ Requires: pypi-dulwich-license = %{version}-%{release}
 Requires: pypi-dulwich-python = %{version}-%{release}
 Requires: pypi-dulwich-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
+BuildRequires : pypi(setuptools)
 BuildRequires : pypi(urllib3)
 # Suppress stripping binaries
 %define __strip /bin/true
@@ -80,7 +81,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1683037065
+export SOURCE_DATE_EPOCH=1685560395
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
