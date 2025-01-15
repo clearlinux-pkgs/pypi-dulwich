@@ -1,3 +1,159 @@
+0.22.7	2024-12-19
+
+ * Fix serializing of commits with empty commit messages.
+   (Castedo Ellerman, #1429)
+
+0.22.6	2024-11-16
+
+ * ``ObjectStore.iter_prefix``: fix handling of missing
+   loose object directories. (Jelmer Vernooĳ)
+
+ * Reject invalid refcontainer values (not 40 characters or symref).
+   (Arun Babu Neelicattu)
+
+ * Add type hints to various functions. (Castedo Ellerman)
+
+0.22.5	2024-11-07
+
+ * Drop support for Python 3.8. (Jelmer Vernooĳ)
+
+ * Fix refspec handling in porcelain.pull. (Jelmer Vernooĳ)
+
+ * Drop broken refspec support in porcelain.clone.
+   (Jelmer Vernooĳ)
+
+ * Provide ``ref_prefix`` functionality client-side
+   if the server does not support it. (Jelmer Vernooĳ)
+
+ * Consistently honor ``ref_prefix`` and ``protocol_version``
+   arguments in client. (Jelmer Vernooĳ)
+
+ * Strip pkt-line when negotiating protocol v2. Fixes
+   compatibility with gerrit. (Rémy Pecqueur, #1423)
+
+ * Don't pull in ``setuptools_rust`` when building pure
+   package. (Eli Schwartz)
+
+ * Return peeled refs from ``GitClient.get_refs`` if protocol-v2
+   is used. (Stefan Sperling, #1410)
+
+ * Drop outdated performance file. (Jelmer Vernooĳ, #1411)
+
+
+0.22.4	2024-11-01
+
+ * Fix handling of symrefs with protocol v2.
+   (Jelmer Vernooĳ, #1389)
+
+ * Add ``ObjectStore.iter_prefix``.  (Jelmer Vernooĳ)
+
+ * Revert back to version 3 of ``Cargo.lock``, to allow
+   building with older Cargo versions.
+   (Jelmer Vernooĳ)
+
+ * Use a default ref-prefix when fetching with git protocol v2
+   (Stefan Sperling, #1389)
+
+ * Add `ObjectStore.iter_prefix`. (Jelmer Vernooĳ)
+
+0.22.3	2024-10-15
+
+ * Improve wheel building in CI, so we can upload wheels for the next release.
+   (Jelmer Vernooĳ)
+
+0.22.2	2024-10-09
+
+ * Ship ``Cargo.lock``. (Jelmer Vernooĳ, #1287)
+
+ * Ship ``tests/`` and ``testdata/`` in sdist. (Jelmer Vernooĳ, #1292)
+
+ * Add initial integration with OSS-Fuzz for continuous fuzz testing and first fuzzing test (David Lakin, #1302)
+
+ * Drop Python 3.7 support. (Jelmer Vernooĳ)
+
+ * Improve fuzzing coverage (David Lakin)
+
+ * Support Python 3.13. (Edgar Ramírez-Mondragón, #1352)
+
+ * Initial support for smart protocol v2. (Stefan Sperling)
+
+0.22.1	2024-04-23
+
+ * Handle alternate case for worktreeconfig setting (Will Shanks, #1285)
+
+ * Ship rust files. (Jelmer Vernooĳ, #1287)
+
+0.22.0	2024-04-22
+
+ * Stop installing docs/ as part of package code. (Jelmer Vernooĳ, #1248)
+
+ * Move tests to root. (Jelmer Vernooĳ, #1024)
+
+ * Convert the optional C implementations to Rust.
+   (Jelmer Vernooĳ)
+
+0.21.7	2023-12-05
+ * Fix NameError when encountering errors during HTTP operation.
+   (Jelmer Vernooĳ, #1208)
+
+ * Raise exception when default identity can't be found.
+   (Jelmer Vernooĳ)
+
+ * Add a dedicated exception class for unresolved
+   deltas. (Jelmer Vernooĳ, #1221)
+
+ * Support credentials in proxy URL. (Jelmer Vernooĳ, #1227)
+
+ * Add ``dulwich.porcelain.for_each_ref``. (Daniele Trifirò)
+
+0.21.6	2023-09-02
+
+ * Convert _objects.c to rust.
+   (Jelmer Vernooĳ)
+
+ * index: Handle different stages of conflicted paths.
+   (Kevin Hendricks, Jelmer Vernooĳ)
+
+ * Improve LCA finding performance. (Kevin Hendricks)
+
+ * client: Handle Content-Type with encoding set.
+   (Antoine Lambert)
+
+ * Only import _hashlib for type checking.
+   (David Hotham)
+
+ * Update docs regarding building dulwich without c bindings (#103)
+   (Adam Plaice)
+
+ * objects: Define a stricter return type for _parse_message
+   (Vincent Lorentz)
+
+ * Raise GitProtocolError when encountering HTTP Errors in
+   HTTPGitClient. (Jelmer Vernooĳ, #1199)
+
+0.21.5	2023-05-04
+
+ * Be more tolerant to non-3-length tuple versions.
+   (Jelmer Vernooĳ)
+
+0.21.4.1	2023-05-04
+
+ * Support ``core.symlinks=false``. (Jelmer Vernooĳ, #1169)
+
+ * Deprecate ``dulwich.objects.parse_commit``.
+
+ * Fix fetching into MemoryRepo. (Jelmer Vernooĳ, #1157)
+
+ * Support ``init.defaultBranch`` config.
+   (Jelmer Vernooĳ)
+
+ * Fix ``ObjectStore.iterobjects_subset()`` when
+   hex shas are passed for objects that live in packs.
+   (Jelmer Vernooĳ, #1166)
+
+ * client: Handle absolute path as redirect location in HTTP client.
+   (Antoine Lambert)
+
 0.21.3	2023-02-17
 
  * Add support for ``worktreeconfig`` extension.
