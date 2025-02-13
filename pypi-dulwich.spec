@@ -7,7 +7,7 @@
 #
 Name     : pypi-dulwich
 Version  : 0.22.7
-Release  : 13
+Release  : 14
 URL      : https://files.pythonhosted.org/packages/67/57/b4962be0410cf15dc7758fcc40337d09515cc74ac15e45d304f8b70c9b40/dulwich-0.22.7.tar.gz
 Source0  : https://files.pythonhosted.org/packages/67/57/b4962be0410cf15dc7758fcc40337d09515cc74ac15e45d304f8b70c9b40/dulwich-0.22.7.tar.gz
 Summary  : Python Git Library
